@@ -114,20 +114,27 @@ public class JackpotMachine {
                 //after spliting and separate the concerns the code should be 
                 //person.addbalance((this.amount))
                 //history.add("amount: " + amount);
+                balance += plot;
+                plot = 0.0; 
             }
             else if (nums[0] == 7 && nums[1] == 7 || nums[1] == 7 && nums[2] == 7 || nums[2] == 7 && nums[0] == 7) {
                 //after spliting and separate the concerns the code should be 
                 //person.addbalance((this.amount)/ 7.0)
+                balance +=( plot / 7.0) 
+                plot = plot - (plot / 7.0);
+                
             }
                    
             if (nums[0] == nums[1] && nums[1] == nums[2]) {
                 //after spliting and separate the concerns the code should be 
                 //person.addbalance((this.amount / 2.0 ))
+                this.balance += (this.amount / 2.0);
+                plot = plot / 2;
             }
         }
         else
         {
-            throw new Exception("you should have more than 10 coins and signed in");
+            throw new Exception("you should have more than 10 coins and be signed in");
         }
     }
     
