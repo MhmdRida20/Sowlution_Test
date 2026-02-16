@@ -8,48 +8,47 @@ def is_prime(n : int):
         if n % i == 0:
             return False
     return True
-
+"""
+Noting that it seems that i forgot to push the last edit and forgot to save so during the evaluation 
+i constate that their are something that should be changed already so i didnt figure it in this short 
+periode of time this is why i remake some light changes 
+Sorry in advance for this issue and thanks for your consideration 
+!! The only changes are in this file - you can check if you want from the commits in the profile / vs-extention!!
+"""
 
 def smallest_positive_number(n : int):
     l_prime_nums = []
     i = 0
-    j = 0
     long_number = 1
-    tmp_n = n
+
 
     if not n:
         return
     if n == 0:
         return (1)
-    for i in range(1,n):
+    for i in range(2,n + 1 ):
         if is_prime(i):
             l_prime_nums.append(i)
-            j = j + 1
     # for i  in range(len(l_prime_nums)):
     #     print(l_prime_nums[i])
     i = 0
-    num = 1
+    num = 0
     while num < len(l_prime_nums):
         #print(num ," loop")
-        if(tmp_n % l_prime_nums[num] == 0):
-            while tmp_n % l_prime_nums[num] == 0:
-                tmp_n = tmp_n / l_prime_nums[num]
-                long_number = long_number * l_prime_nums[num]
-                #print("longNum" , long_number)
-            #print("end while loop")
-        else:
-            #print("not divisible by ", l_prime_nums[num])
-            long_number = long_number * l_prime_nums[num]
-
+        prime_power = 1
+        tmp_pow = l_prime_nums[num]
+        while tmp_pow <= n:
+            prime_power = tmp_pow 
+            tmp_pow = tmp_pow * l_prime_nums[num]
+        long_number = long_number * prime_power
         num = num + 1
     #print("end for loop")
     return (long_number)
 
-"""#main test
-
+"""#main test"""
 n = int(input("enter the number"))
 print("smallest : ",smallest_positive_number(n))
-"""
+
 
 #first try
     # while not found:
