@@ -1,3 +1,3 @@
 # Sowlution_Test
 Readme file for the first task 
-- this repo should contain 3 folders covering exercice 1, 2 and 3
+- this repo should contain 4 folders covering exercice 1, 2, 3 and 4
